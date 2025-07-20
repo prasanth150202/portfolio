@@ -304,3 +304,33 @@
   }
     
 }
+
+.neon-image-wrapper {
+  display: inline-block;
+  padding: 6px;
+  border-radius: 12px;
+background: linear-gradient(45deg, #FFA500, rgba(30,144,255,0), #FFA500, rgba(30,144,255,0));
+  background-size: 400% 400%;
+  animation: neonBorder 5s linear infinite;
+}
+
+.neon-image {
+  border-radius: 12px;
+  display: block;
+  width: 100%;
+  max-height: 400px;
+  box-shadow: 0 0 12px #FFA50080, 0 0 24px #1E90FF80;
+}
+
+/* Animated gradient border */
+@keyframes neonBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+animation: pulseGlow 2.5s ease-in-out infinite;
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 8px #FFA50080, 0 0 20px #1E90FF80; }
+  50% { box-shadow: 0 0 20px #FFA500, 0 0 40px #1E90FF; }
+}
