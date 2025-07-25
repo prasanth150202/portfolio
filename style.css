@@ -452,7 +452,7 @@ background: linear-gradient(45deg, #FFA500, rgba(30,144,255,0), #FFA500, rgba(30
 
         .custom-wrapper-tilt {
       max-width: 1200px;
-      margin: 50px auto;
+      margin: 0 auto;
       padding: 20px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -482,8 +482,9 @@ background: linear-gradient(45deg, #FFA500, rgba(30,144,255,0), #FFA500, rgba(30
     .tilt-card-8 img,
     .tilt-card-9 img {
       width: 100%;
-      height: 180px;
+      height: auto;
       object-fit: cover;
+      border-radius: 12px ;
     }
 
     .content-1, .content-2, .content-3,
