@@ -1,6 +1,9 @@
    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
 
-   
+   body {
+  overflow-x: hidden;
+}
+
    *{
     margin: 0;
     padding: 0;  
@@ -144,7 +147,7 @@
   width: 4px;
   height: 0;
   background: linear-gradient(#7a3c01, #FFA500);
-  filter: drop-shadow(0 0 6px #00566b);
+  filter: drop-shadow(0 0 6px #ffe209);
   transform: translateX(-50%);
   z-index: 1;
   transition: height 0.3s ease;
@@ -457,7 +460,6 @@ background: linear-gradient(45deg, #FFA500, rgba(30,144,255,0), #FFA500, rgba(30
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
-      background: #111;
     }
 
     .tilt-card-1, .tilt-card-2, .tilt-card-3,
@@ -522,3 +524,20 @@ background: linear-gradient(45deg, #FFA500, rgba(30,144,255,0), #FFA500, rgba(30
         height: auto;
         border-radius: 12px;
       }
+
+      .neon-card {
+    background-color: #111;
+    border-radius: 12px;
+    border: 2px solid #FFA500;
+    box-shadow: 0 0 5px #FFA500, 0 0 5px #FF8C00;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .neon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 10px #FFA500, 0 0 15px #FF8C00;
+  }
+
+  .text-warning{
+    color: #FFA500 !important;
+  }
