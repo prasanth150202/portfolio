@@ -23,10 +23,10 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto custom-nav">
-        <li class="nav-item"><a class="nav-link neon-link" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link neon-link" href="#">About</a></li>
-        <li class="nav-item"><a class="nav-link neon-link" href="#">Services</a></li>
-        <li class="nav-item"><a class="nav-link neon-link" href="#">Contact</a></li>
+        <li class="nav-item"><a class="nav-link neon-link" href="#myjourney">My Journey</a></li>
+        <li class="nav-item"><a class="nav-link neon-link" href="#codebase">Code Base</a></li>
+        <li class="nav-item"><a class="nav-link neon-link" href="#ecommerce">E-Commerce Dev</a></li>
+        <li class="nav-item"><a class="nav-link neon-link" href="#contact">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -59,7 +59,7 @@
     </div>
   </div>
 </section>
-<section class="roadmap-section">
+<section class="roadmap-section" id="myjourney">
   <div class="container">
     <div class="row justify-content-center text-center">
       <div class="col-lg-8">
@@ -120,7 +120,7 @@
   </div>
 </section>
 
-<section class="slider-section">
+<section class="slider-section" id="codebase">
   
     <div class="row justify-content-center text-center">
       <div class="col-lg-8">
@@ -190,7 +190,7 @@
   </div>
   </section> 
 <!-- Neon Card Section -->
-<section class="py-5">
+<section id="ecommerce" class="py-5">
   <div class="container text-center">
     <h2 style="color: #FFA500;">Your Store, Your Stack</h2>
     <p class="text-white">I build high-performing eCommerce stores on platforms you love.</p>
@@ -270,10 +270,71 @@
     </div>
   </div>
 </section>
-<!-- Footer -->
-<footer class="text-center py-4">
- 
+<div class="container" id="contact">
+<div id="popup-box">
+  <div class="content1">
+    <div class="popup-text">
+      <h3>Work With Me</h3>
+      <p class="sub-text">Need a developer? Let’s build something amazing together. 🚀</p>
+
+      <form id="popup-form" novalidate>
+        <label for="name" class="form-label">Your Name</label>
+        <input type="text" id="name" class="form-control" placeholder="e.g. John Doe" name="Name" required>
+        <span class="error-message" id="name-error">Please enter your name.</span>
+
+        <label for="email" class="form-label">Email Address</label>
+        <input type="email" id="email" class="form-control" placeholder="e.g. john@example.com" name="Email" required>
+        <span class="error-message" id="email-error">Please enter a valid email address.</span>
+
+        <label for="phone" class="form-label">Phone Number</label>
+        <input type="tel" id="phone" class="form-control" placeholder="e.g. 9876543210" name="Mobile" required>
+        <span class="error-message" id="phone-error">Please enter a valid 10-digit phone number.</span>
+
+        <br>
+        <button type="submit" id="submitButton">Request a Callback</button>
+        <div id="preloader">Sending your request...</div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- Top Wave -->
+<div class="wave-line wave-top">
+  <svg viewBox="0 0 200 40" preserveAspectRatio="none">
+    <!-- Two seamless waves for smooth looping -->
+    <path d="M0 20 Q 25 0, 50 20 T 100 20 T 150 20 T 200 20" 
+          stroke="#FFA500" 
+          stroke-width="2" 
+          fill="none" />
+  </svg>
+</div>
+</div>
+
+  <div class="container">
+    <div class="footer-content text-center">
+    <span class="footer-tagline">Crafted By</span><span class="footer-brand"> Prasanth</span>
+      <p class="footer-tagline">Crafting digital experiences as innovative as they are effective.</p>
+      
+      <ul class="footer-links list-unstyled d-flex justify-content-center">
+        <li><a href="#myjourney">My Journey</a></li>
+        <li><a href="#codebase">Code Base</a></li>
+        <li><a href="#ecommerce">E-Commerce Dev</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/prasanth-sureshkumar-56308927a/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/prasanth150202" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:prasanthsk1502@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+
+      </div>
+      
+      <p class="footer-copy">&copy; 2025 Prasanth. All rights reserved.</p>
+    </div>
+  </div>
 </footer>
+
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-..." crossorigin="anonymous"></script>
@@ -496,7 +557,78 @@
     }
   });
 </script>
+<script>
+document.getElementById('popup-form').addEventListener('submit', function(e) {
+  e.preventDefault();
 
+  // Hide any previous errors
+  document.querySelectorAll('.error-message').forEach(el => el.style.display = 'none');
+
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+
+  let hasError = false;
+
+  // Name validation
+  if (!name) {
+    document.getElementById('name-error').style.display = 'block';
+    hasError = true;
+  }
+
+  // Email validation (basic)
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!email || !emailPattern.test(email)) {
+    document.getElementById('email-error').style.display = 'block';
+    hasError = true;
+  }
+
+  // Phone validation (10 digits only)
+  const phonePattern = /^\d{10}$/;
+  if (!phone || !phonePattern.test(phone)) {
+    document.getElementById('phone-error').style.display = 'block';
+    hasError = true;
+  }
+
+  // Stop if any validation failed
+  if (hasError) return;
+
+  // Show preloader
+  document.getElementById('preloader').style.display = 'block';
+
+  // Prepare form data
+  const formData = new URLSearchParams();
+  formData.append("Name", name);
+  formData.append("Email", email);
+  formData.append("Mobile", phone);
+
+  // Submit data
+  fetch('https://script.google.com/macros/s/AKfycbxaKYTDnYKWXRojj7b4W2MOJn1_gck9bFitwgDT6513clELHPs9E2yrb7Elu2zCclKh/exec', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: formData
+  })
+  .then(res => res.text())
+  .then(response => {
+    document.getElementById('preloader').style.display = 'none';
+
+    if (response === "Success") {
+      document.querySelector('.popup-text').innerHTML = `
+        <h3>Thank You!</h3>
+        <p class="sub-text">Your request has been sent successfully.</p>
+      `;
+    } else {
+      alert("Unexpected response. Please try again.");
+    }
+  })
+  .catch(() => {
+    document.getElementById('preloader').style.display = 'none';
+    alert("Something went wrong. Please try again later.");
+  });
+});
+</script>
 
 </body>
 </html>
